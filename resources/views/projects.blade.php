@@ -582,7 +582,7 @@
                     flex flex-col flex-shrink-0 w-[360px]">
                         <div class="p-3">
                             <div class="aspect-[4/3] overflow-hidden rounded-t-[2rem]">
-                                <img src="{{ asset('images/project/ps8.jpg') }}"
+                                <img src="{{ asset('images/project/ps8.JPG') }}"
                                     alt="Schotival 2025"
                                     class="w-full h-full object-cover">
                             </div>
@@ -644,7 +644,7 @@
                     flex flex-col flex-shrink-0 w-[360px]">
                         <div class="p-3">
                             <div class="aspect-[4/3] overflow-hidden rounded-t-[2rem]">
-                                <img src="{{ asset('images/project/ps10.jpg') }}"
+                                <img src="{{ asset('images/project/ps10.JPG') }}"
                                     alt="MC in Intrivia 2025"
                                     class="w-full h-full object-cover">
                             </div>
@@ -843,7 +843,7 @@
 
                         <div class="p-3">
                             <div class="aspect-[4/3] overflow-hidden rounded-t-[2rem]">
-                                <img src="{{ asset('images/project/intern_krisma.jpg') }}"
+                                <img src="{{ asset('images/project/intern_krisma.JPG') }}"
                                     alt="Intern K-RISMA FILKOM UB 2025"
                                     class="w-full h-full object-cover">
                             </div>
