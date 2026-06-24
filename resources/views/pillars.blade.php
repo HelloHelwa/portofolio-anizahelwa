@@ -95,7 +95,7 @@
                         class="w-full max-w-[240px] aspect-[4/5] bg-[#F6F3E4] p-2.5 rounded-t-[4rem] rounded-b-[2rem] overflow-hidden shadow-xl hover:scale-105 transition duration-500">
 
                         <img
-                            src="{{ asset('images/pillar_1.jpg') }}"
+                            src="{{ asset('images/pillar_1.JPG') }}"
                             alt="Terascerita Community Presentation"
                             class="w-full h-full object-cover rounded-t-[3.7rem] rounded-b-[1.7rem]">
                     </div>
