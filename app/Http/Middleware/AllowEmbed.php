@@ -19,7 +19,7 @@ class AllowEmbed
         
         // Menghapus proteksi X-Frame-Options agar bisa dibaca Google Sites
         $response->headers->set('X-Frame-Options', 'ALLOWALL'); 
-        $response->headers->set('Content-Security-Policy', "frame-ancestors 'self' https://sites.google.com");
+        $response->headers->set('Content-Security-Policy', "frame-ancestors 'self' https://sites.google.com; img-src 'self' data: https: http:;");
 
         return $response;
     }
