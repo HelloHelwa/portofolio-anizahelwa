@@ -20,9 +20,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Jika ada variabel FORCE_HTTPS di server, paksa semua link pakai https
-        if (env('FORCE_HTTPS', false)) {
-            URL::forceScheme('https');
+        if (app()->environment('production')) {
+            \Illuminate\Support\Facades\URL::forceScheme('https');
         }
     }
 }
