@@ -213,6 +213,14 @@
                 min-height: 13rem;
             }
 
+            .book-reading-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .book-reading-panel {
+                display: none !important;
+            }
+
             .offset-copy {
                 padding-left: 0 !important;
             }
@@ -341,7 +349,7 @@
     </section>
 
     <section id = "about">
-        <div class="paired-grid grid grid-cols-1 md:grid-cols-10 w-full overflow-hidden">
+        <div class="book-reading-grid paired-grid grid grid-cols-1 md:grid-cols-10 w-full overflow-hidden">
         
             <div class="text-panel bg-[#F6F3E4] flex flex-col justify-center p-10 md:p-20 lg:p-24 md:col-span-7">
                 <p class="story-copy font-simple text-[#1E100F] text-sm md:text-base lg:text-xl leading-relaxed text-justify tracking-wide opacity-95">
@@ -349,7 +357,7 @@
                 </p>
             </div>
 
-            <div class="image-panel bg-[#1E100F] overflow-hidden min-h-[350px] md:min-h-[450px] relative group md:col-span-3">
+            <div class="book-reading-panel image-panel bg-[#1E100F] overflow-hidden min-h-[350px] md:min-h-[450px] relative group md:col-span-3">
                 <img src="{{ asset('images/book_reading.jpg') }}" alt="Technology and Social Research" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition duration-1000 ease-in-out">
                 <div class="absolute inset-0 bg-[#1E100F]/20 group-hover:bg-transparent transition duration-700"></div>
             </div>
