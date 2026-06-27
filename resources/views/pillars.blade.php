@@ -32,12 +32,206 @@
         .text-espresso { color: #1E100F; }
         .text-cream { color: #F6F3E4; }
         .text-wine { color: #30050E; }
+
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
+        .nav-menu {
+            gap: clamp(0.85rem, 4vw, 5rem);
+            justify-content: center;
+            row-gap: 0.85rem;
+        }
+
+        .nav-menu > * {
+            margin-left: 0 !important;
+        }
+
+        .pillars-hero-title {
+            font-size: clamp(3.4rem, 11vw, 8rem);
+            white-space: normal;
+            overflow-wrap: anywhere;
+        }
+
+        .pillars-hero-copy {
+            font-size: clamp(1.15rem, 3.4vw, 2.5rem);
+            text-wrap: pretty;
+        }
+
+        .pillar-card {
+            max-width: clamp(9rem, 18vw, 15rem);
+        }
+
+        .pillar-heading {
+            font-size: clamp(1.15rem, 2.4vw, 1.875rem);
+            text-wrap: balance;
+        }
+
+        .pillar-copy {
+            text-wrap: pretty;
+        }
+
+        @media (max-width: 767px) {
+            nav {
+                padding: 1.1rem 1rem 1rem !important;
+            }
+
+            .nav-menu {
+                display: grid !important;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                width: 100%;
+                max-width: 28rem;
+                font-size: 0.78rem !important;
+                letter-spacing: 0.12em !important;
+                text-align: center;
+            }
+
+            .nav-menu a {
+                padding: 0.4rem 0.25rem;
+                line-height: 1.2;
+            }
+
+            .pillars-hero {
+                min-height: auto !important;
+                padding: 4.5rem 1rem 3.75rem !important;
+            }
+
+            .pillars-hero-title {
+                font-size: 3.15rem !important;
+                line-height: 0.9 !important;
+                transform: none !important;
+            }
+
+            .pillars-hero-copy {
+                font-size: 1rem !important;
+                line-height: 1.25 !important;
+                letter-spacing: 0.04em !important;
+                padding-top: 0 !important;
+            }
+
+            .pillar-line {
+                opacity: 0.35;
+            }
+
+            .section-rule {
+                padding-top: 1.5rem !important;
+                padding-bottom: 1.5rem !important;
+            }
+
+            .section-rule .mt-16 {
+                margin-top: 1.5rem !important;
+            }
+
+            .pillar-block {
+                padding: 2.25rem 0.85rem !important;
+            }
+
+            .pillar-grid-three {
+                grid-template-columns: minmax(0, 1fr) minmax(6.5rem, 0.75fr) minmax(0, 1fr) !important;
+                gap: 0.65rem !important;
+                align-items: start !important;
+            }
+
+            .pillar-grid-pair {
+                grid-template-columns: minmax(6.75rem, 38%) minmax(0, 62%) !important;
+                gap: 0.85rem !important;
+                align-items: center !important;
+            }
+
+            .pillar-grid-pair.reverse-mobile {
+                grid-template-columns: minmax(0, 62%) minmax(6.75rem, 38%) !important;
+            }
+
+            .pillar-grid-pair.reverse-mobile .pillar-text {
+                order: 1 !important;
+            }
+
+            .pillar-grid-pair.reverse-mobile > div:last-child {
+                order: 2 !important;
+            }
+
+            .pillar-text {
+                text-align: left !important;
+            }
+
+            .pillar-heading {
+                font-size: 0.92rem !important;
+                line-height: 1.1 !important;
+                margin-top: 0 !important;
+                white-space: normal !important;
+            }
+
+            .pillar-copy {
+                font-size: 0.64rem !important;
+                line-height: 1.45 !important;
+                margin-top: 0.65rem !important;
+                text-align: left !important;
+            }
+
+            .pillar-card {
+                max-width: 6.75rem !important;
+                padding: 0.35rem !important;
+                border-top-left-radius: 2rem !important;
+                border-top-right-radius: 2rem !important;
+                border-bottom-left-radius: 0.8rem !important;
+                border-bottom-right-radius: 0.8rem !important;
+            }
+
+            .pillar-card img {
+                border-top-left-radius: 1.75rem !important;
+                border-top-right-radius: 1.75rem !important;
+                border-bottom-left-radius: 0.6rem !important;
+                border-bottom-right-radius: 0.6rem !important;
+            }
+
+            footer .w-16 {
+                width: 3.25rem;
+                height: 3.25rem;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .nav-menu {
+                flex-wrap: wrap;
+                font-size: 0.95rem !important;
+                letter-spacing: 0.16em !important;
+            }
+
+            .pillars-hero {
+                min-height: auto !important;
+                padding-block: 5.5rem !important;
+            }
+
+            .pillar-block {
+                padding-inline: 3rem !important;
+            }
+
+            .pillar-grid-three {
+                grid-template-columns: minmax(0, 1fr) minmax(11rem, 0.7fr) minmax(0, 1fr) !important;
+                gap: 1.5rem !important;
+            }
+
+            .pillar-grid-pair,
+            .pillar-grid-pair.reverse-mobile {
+                grid-template-columns: minmax(12rem, 0.75fr) minmax(0, 1.25fr) !important;
+                gap: 2rem !important;
+            }
+
+            .pillar-grid-pair.reverse-mobile {
+                grid-template-columns: minmax(0, 1.25fr) minmax(12rem, 0.75fr) !important;
+            }
+
+            .pillar-copy {
+                font-size: 0.92rem !important;
+            }
+        }
     </style>
 </head>
 <body class="bg-cream text-wine font-simple antialiased">
 
     <nav class="w-full pt-8 pb-6 px-6 flex justify-center items-center bg-cream sticky top-0 z-50 shadow-sm transition-all duration-300">
-        <div class="flex space-x-12 md:space-x-20 text-base md:text-xl tracking-[0.25em] font-classic uppercase">
+        <div class="nav-menu flex flex-wrap space-x-12 md:space-x-20 text-base md:text-xl tracking-[0.25em] font-classic uppercase">
             <a href="{{ route('portfolio.index') }}" class="text-wine opacity-70 hover:opacity-100 font-bold transition duration-300 pb-1 border-b-2 border-transparent">Home</a>
             <a href="{{ route('portfolio.index') }}#about" class="text-wine opacity-70 hover:opacity-100 font-bold transition duration-300 pb-1 border-b-2 border-transparent">About Me</a>
             <a href="#" class="text-wine font-bold border-b-2 border-wine pb-1 transition duration-300">The Pillars</a>
@@ -45,14 +239,14 @@
         </div>
     </nav>
 
-    <main class="min-h-[85vh] flex flex-col justify-center items-center px-4 py-20 text-center overflow-hidden">
+    <main class="pillars-hero min-h-[85vh] flex flex-col justify-center items-center px-4 py-20 text-center overflow-hidden">
         <div class="w-full max-w-7xl mx-auto space-y-12">
             
-            <h3 class="font-decorative text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-wine leading-none tracking-wide select-none whitespace-nowrap transform scale-95 md:scale-100 origin-center">
+            <h3 class="pillars-hero-title font-decorative text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-wine leading-none tracking-wide select-none whitespace-nowrap transform scale-95 md:scale-100 origin-center">
                 Impact Through Innovation
             </h3>
 
-            <p class="font-classic text-2xl md:text-4xl lg:text-4xl font-extrabold text-wine leading-tight max-w-5xl mx-auto tracking-wide pt-4">
+            <p class="pillars-hero-copy font-classic text-2xl md:text-4xl lg:text-4xl font-extrabold text-wine leading-tight max-w-5xl mx-auto tracking-wide pt-4">
                 “Combining computer science, communication, and social impact to create technology that matters.”
             </p>
 
@@ -63,28 +257,28 @@
     <section class="relative w-full bg-[#1E100F] text-[#F6F3E4] font-simple overflow-hidden">
 
     <!-- Vertical Lines -->
-    <div class="absolute top-0 bottom-0 left-[12%] w-[1px] bg-[#F6F3E4]"></div>
-    <div class="absolute top-0 bottom-0 right-[12%] w-[1px] bg-[#F6F3E4]"></div>
+    <div class="pillar-line absolute top-0 bottom-0 left-[12%] w-[1px] bg-[#F6F3E4]"></div>
+    <div class="pillar-line absolute top-0 bottom-0 right-[12%] w-[1px] bg-[#F6F3E4]"></div>
 
     <div class="relative max-w-7xl mx-auto">
 
         <!-- TOP DOUBLE LINE -->
-        <div class="w-screen relative left-1/2 -translate-x-1/2 pt-20 pb-8">
+        <div class="section-rule w-screen relative left-1/2 -translate-x-1/2 pt-20 pb-8">
             <div class="border-t border-[#F6F3E4]"></div>
             <!-- <div class="border-t border-[#F6F3E4] mt-16"></div> -->
         </div>
 
         <!-- SECTION 1 -->
-        <div class="py-20 px-8 md:px-16 lg:px-24">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div class="pillar-block py-20 px-8 md:px-16 lg:px-24">
+            <div class="pillar-grid-three grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
 
                 <!-- LEFT TEXT -->
-                <div class="lg:col-span-4 text-center lg:text-right flex flex-col justify-start h-full">
-                    <h4 class="font-classic text-xl md:text-2xl lg:text-3xl font-bold lg:whitespace-nowrap mt-8">
+                <div class="pillar-text lg:col-span-4 text-center lg:text-right flex flex-col justify-start h-full">
+                    <h4 class="pillar-heading font-classic text-xl md:text-2xl lg:text-3xl font-bold lg:whitespace-nowrap mt-8">
                         Making Technology Easy to
                     </h4>
 
-                    <p class="mt-6 text-base leading-relaxed text-[#F6F3E4]/80 text-justify lg:text-right">
+                    <p class="pillar-copy mt-6 text-base leading-relaxed text-[#F6F3E4]/80 text-justify lg:text-right">
                         Through my journey in technology, I have realized that while many people can build technology, only a few can explain complex ideas in a way that everyone can understand.
                     </p>
                 </div>
@@ -92,7 +286,7 @@
                 <!-- IMAGE -->
                 <div class="lg:col-span-4 flex justify-center">
                     <div
-                        class="w-full max-w-[240px] aspect-[4/5] bg-[#F6F3E4] p-2.5 rounded-t-[4rem] rounded-b-[2rem] overflow-hidden shadow-xl hover:scale-105 transition duration-500">
+                        class="pillar-card w-full max-w-[240px] aspect-[4/5] bg-[#F6F3E4] p-2.5 rounded-t-[4rem] rounded-b-[2rem] overflow-hidden shadow-xl hover:scale-105 transition duration-500">
 
                         <img
                             src="{{ asset('images/pillar_1.JPG') }}"
@@ -102,12 +296,12 @@
                 </div>
 
                 <!-- RIGHT TEXT -->
-                <div class="lg:col-span-4 text-center lg:text-left flex flex-col justify-start h-full">
-                    <h4 class="font-classic text-xl md:text-2xl lg:text-3xl font-bold italic lg:whitespace-nowrap mt-8">
+                <div class="pillar-text lg:col-span-4 text-center lg:text-left flex flex-col justify-start h-full">
+                    <h4 class="pillar-heading font-classic text-xl md:text-2xl lg:text-3xl font-bold italic lg:whitespace-nowrap mt-8">
                         Understand for Everyone
                     </h4>
 
-                    <p class="mt-6 text-base leading-relaxed text-[#F6F3E4]/80 text-justify lg:text-left">
+                    <p class="pillar-copy mt-6 text-base leading-relaxed text-[#F6F3E4]/80 text-justify lg:text-left">
                         By combining my background in computer science and public speaking, I aim to bridge the gap between technology and society, making technical concepts more accessible while helping people become more aware of the opportunities and risks that technology brings.
                     </p>
                 </div>
@@ -116,19 +310,19 @@
         </div>
 
         <!-- DIVIDER -->
-        <div class="w-screen relative left-1/2 -translate-x-1/2 py-8">
+        <div class="section-rule w-screen relative left-1/2 -translate-x-1/2 py-8">
             <div class="border-t border-[#F6F3E4]"></div>
             <div class="border-t border-[#F6F3E4] mt-16"></div>
         </div>
 
         <!-- SECTION 2 -->
-        <div class="py-20 px-8 md:px-16 lg:px-24">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
+        <div class="pillar-block py-20 px-8 md:px-16 lg:px-24">
+            <div class="pillar-grid-pair grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
 
                 <!-- IMAGE -->
                 <div class="md:col-span-4 flex justify-center">
                     <div
-                        class="w-full max-w-[240px] aspect-[4/5] bg-[#F6F3E4] p-2.5 rounded-t-[4rem] rounded-b-[2rem] overflow-hidden shadow-xl hover:scale-105 transition duration-500">
+                        class="pillar-card w-full max-w-[240px] aspect-[4/5] bg-[#F6F3E4] p-2.5 rounded-t-[4rem] rounded-b-[2rem] overflow-hidden shadow-xl hover:scale-105 transition duration-500">
 
                         <img
                             src="{{ asset('images/pillar_2.jpeg') }}"
@@ -138,15 +332,15 @@
                 </div>
 
                 <!-- TEXT -->
-                <div class="md:col-span-8">
-                    <h4 class="font-classic text-xl md:text-2xl lg:text-3xl font-bold leading-tight">
+                <div class="pillar-text md:col-span-8">
+                    <h4 class="pillar-heading font-classic text-xl md:text-2xl lg:text-3xl font-bold leading-tight">
                         Learning New Things Quickly and
                         <span class="italic font-normal">
                             Having High Curiosity
                         </span>
                     </h4>
 
-                    <p class="mt-6 text-sm md:text-base leading-relaxed text-[#F6F3E4]/80 text-justify">
+                    <p class="pillar-copy mt-6 text-sm md:text-base leading-relaxed text-[#F6F3E4]/80 text-justify">
                         I am driven by curiosity and a strong willingness to learn new things. Even without any experience in IoT or Computer Vision, I challenged myself to join a robotics organization and successfully complete projects in both fields within a limited timeframe. I see every challenge as an opportunity to grow, expand my skills, and build a broader portfolio.
                     </p>
                 </div>
@@ -155,25 +349,25 @@
         </div>
 
         <!-- DIVIDER -->
-        <div class="w-screen relative left-1/2 -translate-x-1/2 py-8">
+        <div class="section-rule w-screen relative left-1/2 -translate-x-1/2 py-8">
             <div class="border-t border-[#F6F3E4]"></div>
             <div class="border-t border-[#F6F3E4] mt-16"></div>
         </div>
 
         <!-- SECTION 3 -->
-        <div class="py-20 px-8 md:px-16 lg:px-24">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
+        <div class="pillar-block py-20 px-8 md:px-16 lg:px-24">
+            <div class="pillar-grid-pair reverse-mobile grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
 
                 <!-- TEXT -->
-                <div class="md:col-span-8 order-2 md:order-1">
-                    <h4 class="font-classic text-xl md:text-2xl lg:text-3xl font-bold leading-tight">
+                <div class="pillar-text md:col-span-8 order-2 md:order-1">
+                    <h4 class="pillar-heading font-classic text-xl md:text-2xl lg:text-3xl font-bold leading-tight">
                         Leading with Proactivity and
                         <span class="italic font-normal">
                             a Highly Structured Plan
                         </span>
                     </h4>
 
-                    <p class="mt-6 text-sm md:text-base leading-relaxed text-[#F6F3E4]/80 text-justify">
+                    <p class="pillar-copy mt-6 text-sm md:text-base leading-relaxed text-[#F6F3E4]/80 text-justify">
                         I believe that success is not only defined by results, but also by integrity, the learning process, and a genuine commitment to growing together. I approach decisions thoughtfully and systematically, staying organized and calm under pressure to make well-considered choices. Through empathetic leadership, I strive to ensure that every initiative and technology solution I contribute to creates a positive impact on the people and communities around it.
                     </p>
                 </div>
@@ -181,7 +375,7 @@
                 <!-- IMAGE -->
                 <div class="md:col-span-4 flex justify-center md:justify-end order-1 md:order-2">
                     <div
-                        class="w-full max-w-[240px] aspect-[4/5] bg-[#F6F3E4] p-2.5 rounded-t-[4rem] rounded-b-[2rem] overflow-hidden shadow-xl hover:scale-105 transition duration-500">
+                        class="pillar-card w-full max-w-[240px] aspect-[4/5] bg-[#F6F3E4] p-2.5 rounded-t-[4rem] rounded-b-[2rem] overflow-hidden shadow-xl hover:scale-105 transition duration-500">
 
                         <img
                             src="{{ asset('images/pillar_3.jpg') }}"
@@ -194,7 +388,7 @@
         </div>
 
         <!-- BOTTOM DOUBLE LINE -->
-        <div class="w-screen relative left-1/2 -translate-x-1/2 pt-8 pb-20">
+        <div class="section-rule w-screen relative left-1/2 -translate-x-1/2 pt-8 pb-20">
             <div class="border-t border-[#F6F3E4]"></div>
             <!-- <div class="border-t border-[#F6F3E4] mt-16"></div> -->
         </div>
@@ -223,7 +417,7 @@
                 <a href="https://www.tiktok.com/@anizahelwa?_r=1&_t=ZS-97ImrqsLzF7" target="_blank" class="w-16 h-16 rounded-full bg-[#F6F3E4] flex justify-center items-center text-wine hover:scale-110 transition duration-300 shadow-xl">
                     <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.05 1.7 4.14 1.05.99 2.49 1.52 3.86 1.6v3.82c-1.49-.05-2.98-.55-4.14-1.47-.13-.1-.23-.2-.34-.31v6.71c.02 4.19-2.65 7.97-6.71 8.94-4.52 1.15-9.3-1.46-10.4-5.96-1.19-4.51 1.34-9.36 5.8-10.61 1.14-.32 2.33-.42 3.51-.3v3.83c-1.92-.4-3.95.42-4.94 2.11-.98 1.63-.78 3.81.49 5.2 1.25 1.41 3.42 1.83 5.12 1.01 1.62-.75 2.58-2.48 2.51-4.27v-14.8zm0 0"/></svg>
                 </a>
-                <a href="https://github.com" target="_blank" class="w-16 h-16 rounded-full bg-[#F6F3E4] flex justify-center items-center text-wine hover:scale-110 transition duration-300 shadow-xl">
+                <a href="https://github.com/AnizaHelwa" target="_blank" class="w-16 h-16 rounded-full bg-[#F6F3E4] flex justify-center items-center text-wine hover:scale-110 transition duration-300 shadow-xl">
                     <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 </a>
             </div>

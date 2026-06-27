@@ -32,12 +32,225 @@
         .text-espresso { color: #1E100F; }
         .text-cream { color: #F6F3E4; }
         .text-wine { color: #30050E; }
+
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
+        .nav-menu {
+            gap: clamp(0.85rem, 4vw, 5rem);
+            justify-content: center;
+            row-gap: 0.85rem;
+        }
+
+        .nav-menu > * {
+            margin-left: 0 !important;
+        }
+
+        .hero-title {
+            font-size: clamp(3.5rem, 12vw, 8rem);
+            overflow-wrap: anywhere;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.55rem, 5vw, 3.75rem);
+            letter-spacing: clamp(0.08em, 2vw, 0.3em);
+        }
+
+        .hero-copy,
+        .story-copy {
+            text-wrap: pretty;
+        }
+
+        .project-cta {
+            max-width: min(100%, 28rem);
+            text-align: center;
+        }
+
+        .portrait-frame {
+            max-width: min(100%, 28rem);
+        }
+
+        .value-card {
+            min-height: 26rem;
+        }
+
+        .about-copy-column {
+            min-width: 0;
+        }
+
+        @media (max-width: 767px) {
+            nav {
+                padding: 1.1rem 1rem 1rem !important;
+            }
+
+            .nav-menu {
+                display: grid !important;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                width: 100%;
+                max-width: 28rem;
+                font-size: 0.78rem !important;
+                letter-spacing: 0.12em !important;
+                text-align: center;
+            }
+
+            .nav-menu a {
+                padding: 0.4rem 0.25rem;
+                line-height: 1.2;
+            }
+
+            .hero-section {
+                min-height: auto !important;
+                padding: 4.5rem 1.25rem 3.75rem !important;
+            }
+
+            .hero-subtitle {
+                margin-bottom: 1.5rem !important;
+            }
+
+            .profile-strip-text {
+                font-size: 0.8rem !important;
+                letter-spacing: 0.08em !important;
+            }
+
+            .project-cta {
+                padding: 0.95rem 1.25rem !important;
+                letter-spacing: 0.12em !important;
+            }
+
+            .about-intro-section {
+                padding: 2.75rem 0.9rem !important;
+            }
+
+            .closing-section,
+            .value-section {
+                padding: 4rem 1.25rem !important;
+            }
+
+            .about-intro-grid {
+                grid-template-columns: minmax(0, 1.2fr) minmax(7.5rem, 0.8fr) !important;
+                gap: 1rem !important;
+                align-items: center !important;
+            }
+
+            .about-copy-column > * + * {
+                margin-top: 1rem !important;
+            }
+
+            .about-intro-section h3,
+            .about-intro-section h4 {
+                font-size: 1.25rem !important;
+                line-height: 1.05 !important;
+                letter-spacing: 0.04em !important;
+            }
+
+            .story-copy,
+            .about-intro-section p {
+                font-size: 0.68rem !important;
+                line-height: 1.45 !important;
+                text-align: left !important;
+                letter-spacing: 0.01em !important;
+            }
+
+            .portrait-frame {
+                padding: 0.35rem !important;
+                border-top-left-radius: 2.25rem !important;
+                border-top-right-radius: 2.25rem !important;
+                border-bottom-left-radius: 0.75rem !important;
+                border-bottom-right-radius: 0.75rem !important;
+                max-width: 8.75rem !important;
+            }
+
+            .portrait-frame img {
+                border-top-left-radius: 2rem !important;
+                border-top-right-radius: 2rem !important;
+                border-bottom-left-radius: 0.55rem !important;
+                border-bottom-right-radius: 0.55rem !important;
+            }
+
+            .paired-section,
+            .paired-grid {
+                display: grid !important;
+                grid-template-columns: minmax(7.5rem, 42%) minmax(0, 58%) !important;
+                gap: 0 !important;
+                align-items: stretch !important;
+            }
+
+            .lantern-visual-panel {
+                min-height: auto !important;
+                aspect-ratio: auto !important;
+                padding: 1.5rem 0.75rem !important;
+            }
+
+            .lantern-card {
+                max-width: 7.25rem !important;
+                padding: 0.75rem !important;
+                border-radius: 1rem !important;
+            }
+
+            .quote-panel,
+            .text-panel {
+                padding: 1.5rem 1rem !important;
+            }
+
+            .lantern-quote {
+                font-size: 0.9rem !important;
+                line-height: 1.35 !important;
+                letter-spacing: 0.01em !important;
+            }
+
+            .lantern-quote span {
+                font-size: 1.35rem !important;
+            }
+
+            .image-panel {
+                min-height: 13rem !important;
+            }
+
+            .paired-grid .text-panel,
+            .paired-section .text-panel {
+                min-height: 13rem;
+            }
+
+            .offset-copy {
+                padding-left: 0 !important;
+            }
+
+            .value-card {
+                aspect-ratio: auto !important;
+                min-height: auto;
+                padding: 2rem 1.5rem !important;
+            }
+
+            footer .w-16 {
+                width: 3.25rem;
+                height: 3.25rem;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .nav-menu {
+                flex-wrap: wrap;
+                font-size: 0.95rem !important;
+                letter-spacing: 0.16em !important;
+            }
+
+            .hero-section {
+                padding-block: 5.5rem !important;
+            }
+
+            .value-card {
+                aspect-ratio: auto !important;
+                min-height: 30rem;
+            }
+        }
     </style>
 </head>
 <body class="bg-espresso text-cream font-simple antialiased">
 
     <nav class="w-full pt-8 pb-6 px-6 flex justify-center items-center bg-[#1E100F]/90 sticky top-0 z-50 backdrop-blur-md border-b border-[#F6F3E4]/5 transition-all duration-300">
-        <div class="flex space-x-12 md:space-x-20 text-base md:text-xl tracking-[0.25em] font-classic uppercase">
+        <div class="nav-menu flex flex-wrap space-x-12 md:space-x-20 text-base md:text-xl tracking-[0.25em] font-classic uppercase">
             <a href="#" data-nav="home" class="nav-link text-cream font-bold transition duration-300 pb-1 border-b-2 border-transparent">Home</a>
             <a href="#about" data-nav="about" class="nav-link text-cream opacity-75 hover:opacity-100 font-bold transition duration-300 pb-1 border-b-2 border-transparent">About Me</a>
             
@@ -46,45 +259,45 @@
         </div>
     </nav>
 
-    <section class="min-h-[55vh] md:min-h-[60vh] px-6 text-center bg-espresso flex flex-col justify-center items-center">
-        <h1 class="font-decorative text-7xl md:text-9xl text-cream tracking-wide mb-2 opacity-95 leading-none">
+    <section class="hero-section min-h-[55vh] md:min-h-[60vh] px-6 text-center bg-espresso flex flex-col justify-center items-center">
+        <h1 class="hero-title font-decorative text-7xl md:text-9xl text-cream tracking-wide mb-2 opacity-95 leading-none">
             Aniza Helwa Mahanani
         </h1>
         
-        <h2 class="font-classic text-4xl md:text-6xl tracking-[0.3em] font-medium text-cream mb-8 leading-none">
+        <h2 class="hero-subtitle font-classic text-4xl md:text-6xl tracking-[0.3em] font-medium text-cream mb-8 leading-none">
             CREATIVE PORTFOLIO
         </h2>
         
-        <p class="font-simple opacity-80 text-xs md:text-base tracking-wider max-w-2xl font-normal leading-relaxed">
+        <p class="hero-copy font-simple opacity-80 text-xs md:text-base tracking-wider max-w-2xl font-normal leading-relaxed">
             For me, growth is never about reaching perfection, but it is about<br class="hidden md:inline">
             how we learn, evolve, and create meaningful impact for others.
         </p>
     </section>
 
     <div class="w-full bg-cream py-10 px-6 text-center flex justify-center items-center shadow-inner">
-        <p class="font-simple text-espresso font-bold text-xl md:text-sm tracking-[0.12em] lg:tracking-[0.18em] leading-relaxed max-w-5xl uppercase">
+        <p class="profile-strip-text font-simple text-espresso font-bold text-xl md:text-sm tracking-[0.12em] lg:tracking-[0.18em] leading-relaxed max-w-5xl uppercase">
             Informatics Engineering @UB &nbsp;|&nbsp; Google Student Ambassador 2026 &nbsp;|&nbsp; <br class="hidden lg:inline">
             TEDx Speaker &nbsp;|&nbsp; Teladan Scholar
         </p>
     </div>
 
     <div class="w-full bg-maroon-accent py-12 px-6 text-center flex justify-center items-center">
-        <a href="{{ url('/projects') }}" class="font-simple bg-cream text-espresso font-bold text-xs md:text-sm tracking-[0.2em] uppercase px-14 py-4 rounded-xl hover:scale-105 transition duration-300 shadow-xl border border-cream/10">
+        <a href="{{ url('/projects') }}" class="project-cta font-simple bg-cream text-espresso font-bold text-xs md:text-sm tracking-[0.2em] uppercase px-14 py-4 rounded-xl hover:scale-105 transition duration-300 shadow-xl border border-cream/10">
             See Project & Achievements
         </a>
     </div>
 
 
-    <section id="about" class="bg-cream text-espresso py-24 px-8 md:px-16 lg:px-24">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <section id="about" class="about-intro-section bg-cream text-espresso py-24 px-8 md:px-16 lg:px-24">
+        <div class="about-intro-grid max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
-            <div class="lg:col-span-7 space-y-12">
+            <div class="about-copy-column lg:col-span-7 space-y-12">
                 
                 <div class="space-y-4">
                     <h3 class="font-classic text-4xl md:text-5xl tracking-[0.1em] font-extrabold text-espresso uppercase">
                             ABOUT <span class="italic font-normal">ME</span>
                     </h3>
-                    <p class="font-simple text-sm md:text-base lg:text-lg leading-relaxed text-espresso/90 text-justify tracking-wide">
+                    <p class="story-copy font-simple text-sm md:text-base lg:text-lg leading-relaxed text-espresso/90 text-justify tracking-wide">
                         Hello, I’m Aniza Helwa Mahanani. I’m an Informatics Student at Brawijaya University who is also a Teladan by Tanoto Foundation Scholar, a Google Student Ambassador for 2026, and a TEDx Speaker for 2026.
                     </p>
                 </div>
@@ -93,7 +306,7 @@
                     <h4 class="font-classic text-4xl md:text-5xl tracking-[0.1em] font-extrabold text-espresso uppercase">
                         PERSONAL <span class="italic font-normal">ESSENCE</span>
                     </h4>
-                    <p class="font-simple text-sm md:text-base lg:text-lg leading-relaxed text-espresso/90 text-justify tracking-wide">
+                    <p class="story-copy font-simple text-sm md:text-base lg:text-lg leading-relaxed text-espresso/90 text-justify tracking-wide">
                         I’ve always likened myself to a Crystal Lantern, a lantern that doesn’t just shine for itself, but also illuminates the world around it. The crystal inside represents a process of self-reflection that continuously radiates spirit, hope, and passion aligned with my core values as I face challenges, opportunities, and aspirations.
                     </p>
                 </div>
@@ -101,7 +314,7 @@
             </div>
 
             <div class="lg:col-span-5 flex justify-center lg:justify-end w-full">
-                <div class="w-full max-w-md bg-[#30050E] rounded-t-[5rem] rounded-b-2xl p-3 shadow-xl aspect-[4/5] flex items-end overflow-hidden">
+                <div class="portrait-frame w-full max-w-md bg-[#30050E] rounded-t-[5rem] rounded-b-2xl p-3 shadow-xl aspect-[4/5] flex items-end overflow-hidden">
                     <img src="{{ asset('images/profile_hero.png') }}" alt="Aniza Helwa Mahanani" class="w-full h-full object-cover rounded-t-[4.5rem] rounded-b-xl opacity-100 transition duration-300 hover:scale-[1.02]">
                 </div>
             </div>
@@ -110,17 +323,17 @@
     </section>
 
 
-    <section id = "about" class="grid grid-cols-1 md:grid-cols-2 w-full overflow-hidden">
+    <section id = "about" class="paired-section grid grid-cols-1 md:grid-cols-2 w-full overflow-hidden">
         
-        <div class="bg-maroon-accent flex justify-center items-center p-12 md:p-16 lg:p-20 aspect-square md:aspect-auto min-h-[450px]">
-            <div class="relative w-full max-w-[320px] md:max-w-[350px] aspect-square flex justify-center items-center rounded-3xl bg-[#F6F3E4] p-8 shadow-2xl overflow-hidden group border border-[#F6F3E4]/20 hover:scale-105 transition-transform duration-500">
+        <div class="lantern-visual-panel bg-maroon-accent flex justify-center items-center p-12 md:p-16 lg:p-20 aspect-square md:aspect-auto min-h-[450px]">
+            <div class="lantern-card relative w-full max-w-[320px] md:max-w-[350px] aspect-square flex justify-center items-center rounded-3xl bg-[#F6F3E4] p-8 shadow-2xl overflow-hidden group border border-[#F6F3E4]/20 hover:scale-105 transition-transform duration-500">
                 <div class="absolute inset-0 bg-gradient-to-tr from-[#4D0C12]/15 to-transparent opacity-60"></div>
                 <img src="{{ asset('images/lantern.png') }}" alt="Crystal Lantern Illustration" class="w-full h-full object-contain relative z-10 group-hover:scale-110 transition duration-1000 ease-in-out">
             </div>
         </div>
 
-        <div class="bg-espresso flex flex-col justify-center p-10 md:p-20 lg:p-24 border-b border-[#1E100F]/5">
-            <p class="font-simple text-2xl md:text-xl lg:text-2xl text-cream leading-tight tracking-wide font-medium">
+        <div class="quote-panel bg-espresso flex flex-col justify-center p-10 md:p-20 lg:p-24 border-b border-[#1E100F]/5">
+            <p class="lantern-quote font-simple text-2xl md:text-xl lg:text-2xl text-cream leading-tight tracking-wide font-medium">
                 <span class="text-4xl lg:text-3xl">"</span>A crystal lantern: evolving through self-reflection, burning with passion, and casting a meaningful impact to the world around.<span class="text-4xl lg:text-3xl">"</span>
             </p>
         </div>
@@ -128,15 +341,15 @@
     </section>
 
     <section id = "about">
-        <div class="grid grid-cols-1 md:grid-cols-10 w-full overflow-hidden">
+        <div class="paired-grid grid grid-cols-1 md:grid-cols-10 w-full overflow-hidden">
         
-            <div class="bg-[#F6F3E4] flex flex-col justify-center p-10 md:p-20 lg:p-24 md:col-span-7">
-                <p class="font-simple text-[#1E100F] text-sm md:text-base lg:text-xl leading-relaxed text-justify tracking-wide opacity-95">
+            <div class="text-panel bg-[#F6F3E4] flex flex-col justify-center p-10 md:p-20 lg:p-24 md:col-span-7">
+                <p class="story-copy font-simple text-[#1E100F] text-sm md:text-base lg:text-xl leading-relaxed text-justify tracking-wide opacity-95">
                     As a student driven by curiosity, I often dedicate part of my time to exploring the intersection between technology and its social impact. One issue that particularly captures my attention is the misuse of AI-generated animations and deepfakes, which can spread misleading information and create harmful public assumptions, especially among people who are less familiar with technology.
                 </p>
             </div>
 
-            <div class="bg-[#1E100F] overflow-hidden min-h-[350px] md:min-h-[450px] relative group md:col-span-3">
+            <div class="image-panel bg-[#1E100F] overflow-hidden min-h-[350px] md:min-h-[450px] relative group md:col-span-3">
                 <img src="{{ asset('images/book_reading.jpg') }}" alt="Technology and Social Research" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition duration-1000 ease-in-out">
                 <div class="absolute inset-0 bg-[#1E100F]/20 group-hover:bg-transparent transition duration-700"></div>
             </div>
@@ -145,15 +358,15 @@
     </section>
 
 
-    <section id = "about" class="grid grid-cols-1 md:grid-cols-12 w-full overflow-hidden border-t border-[#F6F3E4]/10">
+    <section id = "about" class="paired-section grid grid-cols-1 md:grid-cols-12 w-full overflow-hidden border-t border-[#F6F3E4]/10">
         
-        <div class="md:col-span-4 bg-[#1E100F] overflow-hidden min-h-[350px] md:min-h-[400px] relative">
+        <div class="image-panel md:col-span-4 bg-[#1E100F] overflow-hidden min-h-[350px] md:min-h-[400px] relative">
             <img src="{{ asset('images/profile_flowers.jpg') }}" alt="Aniza Focus Area" class="w-full h-full object-cover opacity-95">
         </div>
 
-        <div class="md:col-span-8 bg-[#30050E] flex flex-col justify-center p-10 md:p-16 lg:p-20">
-            <div class="w-full max-w-2xl md:pl-20 lg:pl-32">
-                <p class="font-simple text-[#F6F3E4] text-sm md:text-base lg:text-xl leading-relaxed text-justify tracking-wide opacity-90">
+        <div class="text-panel md:col-span-8 bg-[#30050E] flex flex-col justify-center p-10 md:p-16 lg:p-20">
+            <div class="offset-copy w-full max-w-2xl md:pl-20 lg:pl-32">
+                <p class="story-copy font-simple text-[#F6F3E4] text-sm md:text-base lg:text-xl leading-relaxed text-justify tracking-wide opacity-90">
                     One issue that has drawn significant attention is the surge in deepfake-related fraud cases in Indonesia, which increased by 1,550% between 2022 and 2023 (Al Buchory et al., 2024). This trend highlights the growing need for public awareness and vigilance against deepfake-based content that is used for personal gain and can cause harm to individuals or communities.
                 </p>
             </div>
@@ -161,7 +374,7 @@
 
     </section>
 
-    <section id = "about" class="bg-[#F6F3E4] text-[#1E100F] py-24 px-8 md:px-16 text-center">
+    <section id = "about" class="closing-section bg-[#F6F3E4] text-[#1E100F] py-24 px-8 md:px-16 text-center">
         <div class="max-w-3xl mx-auto space-y-8">
             <p class="font-simple text-sm md:text-base lg:text-xl font-medium leading-relaxed tracking-wide opacity-95">
                 This is where I believe I can make a difference. With my background in computer science and strong public speaking skills, I can help people better understand technology and reduce the negative impacts caused by its misuse.
@@ -174,10 +387,10 @@
     </section>
 
 
-    <section id = "about" class="bg-[#1E100F] py-24 px-6 md:px-16 lg:px-24">
+    <section id = "about" class="value-section bg-[#1E100F] py-24 px-6 md:px-16 lg:px-24">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-center items-center gap-12 md:gap-8 relative">
             
-            <div class="bg-[#F6F3E4] text-[#1E100F] p-8 md:p-12 rounded-lg w-full max-w-[420px] aspect-[3/4] flex flex-col justify-center items-center text-center shadow-2xl">
+            <div class="value-card bg-[#F6F3E4] text-[#1E100F] p-8 md:p-12 rounded-lg w-full max-w-[420px] aspect-[3/4] flex flex-col justify-center items-center text-center shadow-2xl">
                 <div class="space-y-6 font-simple text-xs md:text-sm leading-relaxed tracking-wide text-center">
                     <p>
                         I believe technology should be accessible to everyone. By simplifying complex topics such as AI and deepfakes into easy-to-understand explanations, I aim to help people become more aware of both the benefits and risks of emerging technologies.
@@ -190,7 +403,7 @@
 
             <div class="hidden md:block w-[1px] h-80 bg-[#F6F3E4]/30 mx-4"></div>
 
-            <div class="bg-[#F6F3E4] text-[#1E100F] p-8 md:p-12 rounded-lg w-full max-w-[420px] aspect-[3/4] flex flex-col justify-center items-center text-center shadow-2xl">
+            <div class="value-card bg-[#F6F3E4] text-[#1E100F] p-8 md:p-12 rounded-lg w-full max-w-[420px] aspect-[3/4] flex flex-col justify-center items-center text-center shadow-2xl">
                 <div class="space-y-6 font-simple text-xs md:text-sm leading-relaxed tracking-wide text-center">
                     <p>
                         I am a proactive individual who is committed to giving my best in everything I start. I enjoy exploring facts, understanding root causes, and gaining deeper insights before developing solutions. This mindset encourages me to take initiative, embrace challenges, and create collaborative environments where every voice is heard.
@@ -204,7 +417,7 @@
         </div>
     </section>
 
-    <section id = "about" class="bg-[#F6F3E4] py-20 px-6 md:px-16 text-center border-b border-[#1E100F]/10">
+    <section id = "about" class="closing-section bg-[#F6F3E4] py-20 px-6 md:px-16 text-center border-b border-[#1E100F]/10">
         <div class="max-w-4xl mx-auto">
             <p class="font-classic text-[#30050E] text-lg md:text-xl lg:text-2xl font-extrabold leading-relaxed tracking-wide max-w-3xl mx-auto">
                 The combination of these experiences, skills, and values has shaped who I am today. As I continue to learn and grow, I hope to use my knowledge and abilities to create meaningful impact and contribute positively to society.
@@ -231,7 +444,7 @@
                 <a href="https://www.tiktok.com/@anizahelwa?_r=1&_t=ZS-97ImrqsLzF7" target="_blank" class="w-16 h-16 rounded-full bg-[#F6F3E4] flex justify-center items-center text-wine hover:scale-110 transition duration-300 shadow-xl">
                     <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.05 1.7 4.14 1.05.99 2.49 1.52 3.86 1.6v3.82c-1.49-.05-2.98-.55-4.14-1.47-.13-.1-.23-.2-.34-.31v6.71c.02 4.19-2.65 7.97-6.71 8.94-4.52 1.15-9.3-1.46-10.4-5.96-1.19-4.51 1.34-9.36 5.8-10.61 1.14-.32 2.33-.42 3.51-.3v3.83c-1.92-.4-3.95.42-4.94 2.11-.98 1.63-.78 3.81.49 5.2 1.25 1.41 3.42 1.83 5.12 1.01 1.62-.75 2.58-2.48 2.51-4.27v-14.8zm0 0"/></svg>
                 </a>
-                <a href="https://github.com" target="_blank" class="w-16 h-16 rounded-full bg-[#F6F3E4] flex justify-center items-center text-wine hover:scale-110 transition duration-300 shadow-xl">
+                <a href="https://github.com/AnizaHelwa" target="_blank" class="w-16 h-16 rounded-full bg-[#F6F3E4] flex justify-center items-center text-wine hover:scale-110 transition duration-300 shadow-xl">
                     <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 </a>
             </div>

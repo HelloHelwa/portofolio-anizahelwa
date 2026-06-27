@@ -26,12 +26,250 @@
         .text-cream { color: #F6F3E4; }
         .text-wine { color: #30050E; }
         .text-maroon-accent { color: #4D0C12; }
+
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
+        .nav-menu {
+            gap: clamp(0.85rem, 4vw, 5rem);
+            justify-content: center;
+            row-gap: 0.85rem;
+        }
+
+        .nav-menu > * {
+            margin-left: 0 !important;
+        }
+
+        .missions-hero-title {
+            font-size: clamp(3.3rem, 10.5vw, 8rem);
+            white-space: normal;
+            overflow-wrap: anywhere;
+        }
+
+        .missions-hero-copy {
+            font-size: clamp(1.15rem, 3.4vw, 2.5rem);
+            text-wrap: pretty;
+        }
+
+        .mission-heading,
+        .value-heading {
+            text-wrap: balance;
+        }
+
+        .mission-copy,
+        .value-copy {
+            text-wrap: pretty;
+        }
+
+        @media (max-width: 767px) {
+            nav {
+                padding: 1.1rem 1rem 1rem !important;
+            }
+
+            .nav-menu {
+                display: grid !important;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                width: 100%;
+                max-width: 28rem;
+                font-size: 0.78rem !important;
+                letter-spacing: 0.12em !important;
+                text-align: center;
+            }
+
+            .nav-menu a {
+                padding: 0.4rem 0.25rem;
+                line-height: 1.2;
+            }
+
+            .missions-hero {
+                min-height: auto !important;
+                padding: 4.5rem 1rem 3.75rem !important;
+            }
+
+            .missions-hero > div {
+                gap: 1.5rem !important;
+            }
+
+            .missions-hero-title {
+                font-size: 3rem !important;
+                line-height: 0.9 !important;
+                margin-left: 0 !important;
+                transform: none !important;
+            }
+
+            .missions-hero-copy {
+                font-size: 1rem !important;
+                line-height: 1.25 !important;
+                letter-spacing: 0.04em !important;
+            }
+
+            .mission-section {
+                padding-top: 2.75rem !important;
+            }
+
+            .mission-container {
+                padding-inline: 0.85rem !important;
+            }
+
+            .mission-grid {
+                grid-template-columns: minmax(7.5rem, 38%) minmax(0, 62%) !important;
+                gap: 0.9rem !important;
+                align-items: stretch !important;
+            }
+
+            .mission-grid.reverse-mobile {
+                grid-template-columns: minmax(0, 62%) minmax(7.5rem, 38%) !important;
+            }
+
+            .mission-grid.reverse-mobile .mission-text {
+                order: 1 !important;
+            }
+
+            .mission-grid.reverse-mobile .mission-visual {
+                order: 2 !important;
+            }
+
+            .mission-visual {
+                min-height: 18rem !important;
+                justify-content: center !important;
+            }
+
+            .mission-photo-wrap {
+                width: 7.5rem !important;
+            }
+
+            .mission-photo-bg {
+                height: 13.5rem !important;
+                border-top-left-radius: 4rem !important;
+                border-top-right-radius: 4rem !important;
+            }
+
+            .mission-photo {
+                width: 5.5rem !important;
+                height: 17rem !important;
+                border-top-left-radius: 3.25rem !important;
+                border-top-right-radius: 3.25rem !important;
+            }
+
+            .mission-text {
+                padding-top: 0.25rem !important;
+                padding-bottom: 2.25rem !important;
+            }
+
+            .mission-heading {
+                font-size: 0.98rem !important;
+                line-height: 1.15 !important;
+                white-space: normal !important;
+                text-align: left !important;
+                letter-spacing: 0.03em !important;
+            }
+
+            .mission-copy-wrap {
+                margin-top: 1.25rem !important;
+            }
+
+            .mission-copy {
+                font-size: 0.68rem !important;
+                line-height: 1.5 !important;
+                text-align: left !important;
+                letter-spacing: 0.01em !important;
+            }
+
+            .values-section {
+                padding-top: 3.25rem !important;
+                padding-bottom: 2.75rem !important;
+            }
+
+            .values-heading-wrap {
+                margin-bottom: 2.5rem !important;
+            }
+
+            .values-heading-wrap h3 {
+                font-size: 1.2rem !important;
+            }
+
+            .value-stack {
+                gap: 0.85rem !important;
+            }
+
+            .value-title-box {
+                width: min(70vw, 18rem) !important;
+                padding: 0.65rem 1.25rem !important;
+            }
+
+            .value-title-box h4 {
+                font-size: 1.2rem !important;
+                line-height: 1.1 !important;
+            }
+
+            .value-body-box {
+                width: min(92vw, 34rem) !important;
+                padding: 1.5rem 1.25rem !important;
+            }
+
+            .value-copy {
+                font-size: 0.82rem !important;
+                line-height: 1.55 !important;
+                text-align: left !important;
+                letter-spacing: 0.01em !important;
+            }
+
+            footer .w-16 {
+                width: 3.25rem;
+                height: 3.25rem;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .nav-menu {
+                flex-wrap: wrap;
+                font-size: 0.95rem !important;
+                letter-spacing: 0.16em !important;
+            }
+
+            .missions-hero {
+                min-height: auto !important;
+                padding-block: 5.5rem !important;
+            }
+
+            .mission-container,
+            .values-container {
+                padding-inline: 3rem !important;
+            }
+
+            .mission-photo-wrap {
+                width: 17rem !important;
+            }
+
+            .mission-photo-bg {
+                height: 22rem !important;
+            }
+
+            .mission-photo {
+                width: 12.5rem !important;
+                height: 27rem !important;
+            }
+
+            .mission-copy-wrap {
+                margin-top: 3rem !important;
+            }
+
+            .value-title-box {
+                width: 55vw !important;
+            }
+
+            .value-body-box {
+                width: 90vw !important;
+            }
+        }
     </style>
 </head>
 <body class="bg-maroon-accent text-cream font-simple antialiased">
 
     <nav class="w-full pt-8 pb-6 px-6 flex justify-center items-center bg-maroon-accent sticky top-0 z-50 shadow-sm transition-all duration-300">
-        <div class="flex space-x-12 md:space-x-20 text-base md:text-xl tracking-[0.25em] font-classic uppercase">
+        <div class="nav-menu flex flex-wrap space-x-12 md:space-x-20 text-base md:text-xl tracking-[0.25em] font-classic uppercase">
             <a href="{{ route('portfolio.index') }}" class="text-cream opacity-70 hover:opacity-100 font-bold transition duration-300 pb-1">Home</a>
             <a href="{{ route('portfolio.index') }}#about" class="text-cream opacity-70 hover:opacity-100 font-bold transition duration-300 pb-1">About Me</a>
             <a href="{{ route('portfolio.pillars') }}" class="text-cream opacity-70 hover:opacity-100 font-bold transition duration-300 pb-1">The Pillars</a>
@@ -39,14 +277,14 @@
         </div>
     </nav>
 
-    <main class="min-h-[85vh] flex flex-col justify-center items-center px-4 py-20 text-center overflow-hidden">
+    <main class="missions-hero min-h-[85vh] flex flex-col justify-center items-center px-4 py-20 text-center overflow-hidden">
         <div class="w-full max-w-7xl mx-auto flex flex-col items-center justify-center space-y-12">
             
-            <h3 class="font-decorative text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-cream leading-none select-none whitespace-nowrap text-center block w-full transform scale-95 md:scale-100 origin-center -ml-4 md:-ml-8 lg:-ml-12">
+            <h3 class="missions-hero-title font-decorative text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-cream leading-none select-none whitespace-nowrap text-center block w-full transform scale-95 md:scale-100 origin-center -ml-4 md:-ml-8 lg:-ml-12">
                 Turning Knowledge into Impact
             </h3>
 
-            <p class="font-classic text-2xl md:text-4xl lg:text-4xl font-extrabold text-cream leading-tight max-w-5xl mx-auto tracking-wide text-center block">
+            <p class="missions-hero-copy font-classic text-2xl md:text-4xl lg:text-4xl font-extrabold text-cream leading-tight max-w-5xl mx-auto tracking-wide text-center block">
                 “I use technology and communication to turn innovation into meaningful impact.”
             </p>
 
@@ -55,33 +293,33 @@
 
 
     <!-- BAGIAN 1 -->
-<section class="w-full bg-cream pt-20 pb-0 relative">
-    <div class="max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
+<section class="mission-section w-full bg-cream pt-20 pb-0 relative">
+    <div class="mission-container max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
         
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-stretch relative">
+        <div class="mission-grid grid grid-cols-1 md:grid-cols-12 gap-12 items-stretch relative">
             
-            <div class="md:col-span-5 flex justify-center md:justify-start relative min-h-[500px] z-10">
-                <div class="relative w-[340px] h-full flex items-end">
+            <div class="mission-visual md:col-span-5 flex justify-center md:justify-start relative min-h-[500px] z-10">
+                <div class="mission-photo-wrap relative w-[340px] h-full flex items-end">
                     
-                    <div class="absolute bottom-0 left-0 w-full h-[400px] bg-maroon-accent rounded-t-[10rem]"></div>
+                    <div class="mission-photo-bg absolute bottom-0 left-0 w-full h-[400px] bg-maroon-accent rounded-t-[10rem]"></div>
 
                     <img src="{{ asset('images/missions_1.jpeg') }}" 
                          alt="Google Student Ambassador" 
-                         class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[240px] h-[500px] object-cover rounded-t-[8rem] z-10 shadow-xl">
+                         class="mission-photo absolute bottom-0 left-1/2 -translate-x-1/2 w-[240px] h-[500px] object-cover rounded-t-[8rem] z-10 shadow-xl">
                 
                 </div>
             </div>
 
-            <div class="md:col-span-7 flex flex-col justify-start pt-6 pb-16">
+            <div class="mission-text md:col-span-7 flex flex-col justify-start pt-6 pb-16">
                 <div class="border-t-2 border-[#4D0C12] w-full"></div>
                 <div class="py-6 w-full">
-                    <h4 class="font-classic text-xl md:text-2xl lg:text-3xl font-extrabold text-maroon-accent tracking-wide leading-tight whitespace-nowrap text-center">
+                    <h4 class="mission-heading font-classic text-xl md:text-2xl lg:text-3xl font-extrabold text-maroon-accent tracking-wide leading-tight whitespace-nowrap text-center">
                         Promoting Digital Literacy <span class="italic font-normal">for Everyone</span>
                     </h4>
                 </div>
                 <div class="border-t-2 border-[#4D0C12] w-full"></div>
-                <div class="w-full mt-20 text-justify">
-                    <p class="font-simple text-sm md:text-base leading-relaxed text-maroon-accent font-medium tracking-wide">
+                <div class="mission-copy-wrap w-full mt-20 text-justify">
+                    <p class="mission-copy font-simple text-sm md:text-base leading-relaxed text-maroon-accent font-medium tracking-wide">
                         I believe technology should be accessible to everyone. By combining computer science and
                         communication, I create educational content that helps people understand and use digital
                         tools more effectively. Through initiatives such as sharing practical AI applications,
@@ -96,21 +334,21 @@
 </section>
 
 
-<section class="w-full bg-maroon-accent pt-20 pb-0 relative text-cream">
-    <div class="max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
+<section class="mission-section w-full bg-maroon-accent pt-20 pb-0 relative text-cream">
+    <div class="mission-container max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
         
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-stretch relative">
+        <div class="mission-grid reverse-mobile grid grid-cols-1 md:grid-cols-12 gap-12 items-stretch relative">
             
-            <div class="md:col-span-7 flex flex-col justify-start pt-6 pb-16 order-first">
+            <div class="mission-text md:col-span-7 flex flex-col justify-start pt-6 pb-16 order-first">
                 <div class="border-t-2 border-[#F6F3E4] w-full"></div>
                 <div class="py-6 w-full">
-                    <h4 class="font-classic text-xl md:text-2xl lg:text-3xl font-extrabold text-[#F6F3E4] tracking-wide leading-tight whitespace-nowrap text-left">
+                    <h4 class="mission-heading font-classic text-xl md:text-2xl lg:text-3xl font-extrabold text-[#F6F3E4] tracking-wide leading-tight whitespace-nowrap text-left">
                         Leading with <span class="italic font-normal">Empathy and Integrity</span>
                     </h4>
                 </div>
                 <div class="border-t-2 border-[#F6F3E4] w-full"></div>
-                <div class="w-full mt-20 text-justify">
-                    <p class="font-simple text-sm md:text-base leading-relaxed text-[#F6F3E4]/90 font-medium tracking-wide">
+                <div class="mission-copy-wrap w-full mt-20 text-justify">
+                    <p class="mission-copy font-simple text-sm md:text-base leading-relaxed text-[#F6F3E4]/90 font-medium tracking-wide">
                         I believe leadership is not about authority, but about bringing people together toward a shared purpose. 
                         I am committed to lead with empathy, integrity, and openness by creating environments where every 
                         voice is valued and every learning process is respected. Beyond achieving goals, I always try to 
@@ -119,14 +357,14 @@
                 </div>
             </div>   
 
-            <div class="md:col-span-5 flex justify-center md:justify-end relative min-h-[500px] z-10">
-                <div class="relative w-[340px] h-full flex items-end">
+            <div class="mission-visual md:col-span-5 flex justify-center md:justify-end relative min-h-[500px] z-10">
+                <div class="mission-photo-wrap relative w-[340px] h-full flex items-end">
                     
-                    <div class="absolute bottom-0 left-0 w-full h-[400px] bg-[#F6F3E4] rounded-t-[10rem]"></div>
+                    <div class="mission-photo-bg absolute bottom-0 left-0 w-full h-[400px] bg-[#F6F3E4] rounded-t-[10rem]"></div>
 
                     <img src="{{ asset('images/missions_2.jpeg') }}" 
                          alt="Empathy and Integrity Leadership Group" 
-                         class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[240px] h-[500px] object-cover rounded-t-[8rem] z-10 shadow-xl">
+                         class="mission-photo absolute bottom-0 left-1/2 -translate-x-1/2 w-[240px] h-[500px] object-cover rounded-t-[8rem] z-10 shadow-xl">
                 
                 </div>
             </div>
@@ -136,10 +374,10 @@
 </section>
 
 <!-- ANIZA HELWA VALUES -->
-<section class="w-full bg-cream pt-24 pb-12 text-maroon-accent">
-    <div class="max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
+<section class="values-section w-full bg-cream pt-24 pb-12 text-maroon-accent">
+    <div class="values-container max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
         
-        <div class="relative left-1/2 right-1/2 -translate-x-1/2 w-[100vw] mb-20">
+        <div class="values-heading-wrap relative left-1/2 right-1/2 -translate-x-1/2 w-[100vw] mb-20">
             
             <div class="border-t-2 border-maroon-accent w-full"></div>
             
@@ -153,18 +391,18 @@
 
         </div>
 
-        <div class="relative left-1/2 right-1/2 -translate-x-1/2 w-[100vw] flex flex-col items-start space-y-6">
+        <div class="value-stack relative left-1/2 right-1/2 -translate-x-1/2 w-[100vw] flex flex-col items-start space-y-6">
             
             <!-- Sub Judul -->
-            <div class="bg-maroon-accent text-cream py-3 pl-16 md:pl-48 lg:pl-64 pr-12 shadow-sm w-[40vw]">
-                <h4 class="font-classic text-xl md:text-3xl font-extrabold tracking-wide">
+            <div class="value-title-box bg-maroon-accent text-cream py-3 pl-16 md:pl-48 lg:pl-64 pr-12 shadow-sm w-[40vw]">
+                <h4 class="value-heading font-classic text-xl md:text-3xl font-extrabold tracking-wide">
                     Integrity
                 </h4>
             </div>
 
             <!-- Deskripsi -->
-            <div class="bg-maroon-accent text-cream py-10 pl-16 md:pl-48 lg:pl-64 pr-8 md:pr-16 shadow-md w-[85vw] max-w-5xl">
-                <p class="font-simple text-base md:text-lg leading-relaxed text-cream font-medium tracking-wide text-justify">
+            <div class="value-body-box bg-maroon-accent text-cream py-10 pl-16 md:pl-48 lg:pl-64 pr-8 md:pr-16 shadow-md w-[85vw] max-w-5xl">
+                <p class="value-copy font-simple text-base md:text-lg leading-relaxed text-cream font-medium tracking-wide text-justify">
                     I believe that honesty and consistency are the foundation of meaningful impact.
                     By staying true to my values, taking responsibility for my actions, and committing
                     to every journey I begin, I’m always trying to lead with authenticity and purpose.
@@ -177,21 +415,21 @@
 </section>
 
 
-<section class="w-full bg-maroon-accent py-16 text-cream">
-    <div class="max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
+<section class="values-section w-full bg-maroon-accent py-16 text-cream">
+    <div class="values-container max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
 
-        <div class="relative left-1/2 right-1/2 -translate-x-1/2 w-[100vw] flex flex-col items-end space-y-6">
+        <div class="value-stack relative left-1/2 right-1/2 -translate-x-1/2 w-[100vw] flex flex-col items-end space-y-6">
 
             <!-- Sub Judul -->
-            <div class="bg-cream text-maroon-accent py-3 pr-16 md:pr-48 lg:pr-64 pl-12 shadow-sm w-[40vw] text-right">
-                <h4 class="font-classic text-xl md:text-3xl font-extrabold tracking-wide">
+            <div class="value-title-box bg-cream text-maroon-accent py-3 pr-16 md:pr-48 lg:pr-64 pl-12 shadow-sm w-[40vw] text-right">
+                <h4 class="value-heading font-classic text-xl md:text-3xl font-extrabold tracking-wide">
                     Continuous Growth
                 </h4>
             </div>
 
             <!-- Deskripsi -->
-            <div class="bg-cream text-maroon-accent py-10 pr-16 md:pr-48 lg:pr-64 pl-8 md:pl-16 shadow-md w-[85vw] max-w-5xl">
-                <p class="font-simple text-base md:text-lg leading-relaxed text-maroon-accent font-medium tracking-wide text-justify">
+            <div class="value-body-box bg-cream text-maroon-accent py-10 pr-16 md:pr-48 lg:pr-64 pl-8 md:pl-16 shadow-md w-[85vw] max-w-5xl">
+                <p class="value-copy font-simple text-base md:text-lg leading-relaxed text-maroon-accent font-medium tracking-wide text-justify">
                     I see every experience as an opportunity to learn, improve, and discover new possibilities.
                     By embracing challenges and valuing the learning process, I continuously grow while
                     transforming lessons and setbacks into meaningful achievements.
@@ -203,18 +441,18 @@
     </div>
 </section>
 
-<section class="w-full bg-cream pt-24 pb-12 text-maroon-accent">
-    <div class="max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
-        <div class="relative left-1/2 right-1/2 -translate-x-1/2 w-[100vw] flex flex-col items-start space-y-6">
+<section class="values-section w-full bg-cream pt-24 pb-12 text-maroon-accent">
+    <div class="values-container max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
+        <div class="value-stack relative left-1/2 right-1/2 -translate-x-1/2 w-[100vw] flex flex-col items-start space-y-6">
             <!-- Sub Judul -->
-            <div class="bg-maroon-accent text-cream py-3 pl-16 md:pl-48 lg:pl-64 pr-12 shadow-sm w-[40vw]">
-                <h4 class="font-classic text-xl md:text-3xl font-extrabold tracking-wide">
+            <div class="value-title-box bg-maroon-accent text-cream py-3 pl-16 md:pl-48 lg:pl-64 pr-12 shadow-sm w-[40vw]">
+                <h4 class="value-heading font-classic text-xl md:text-3xl font-extrabold tracking-wide">
                     Inclusivity
                 </h4>
             </div>
             <!-- Deskripsi -->
-            <div class="bg-maroon-accent text-cream py-10 pl-16 md:pl-48 lg:pl-64 pr-8 md:pr-16 shadow-md w-[85vw] max-w-5xl">
-                <p class="font-simple text-base md:text-lg leading-relaxed text-cream font-medium tracking-wide text-justify">
+            <div class="value-body-box bg-maroon-accent text-cream py-10 pl-16 md:pl-48 lg:pl-64 pr-8 md:pr-16 shadow-md w-[85vw] max-w-5xl">
+                <p class="value-copy font-simple text-base md:text-lg leading-relaxed text-cream font-medium tracking-wide text-justify">
                     I believe that every voice deserves to be heard. Through open dialogue, empathy, and 
                     accessible communication, I aim to create spaces where people can learn, grow, and 
                     collaborate together while ensuring technology remains beneficial and accessible to everyone.
@@ -250,7 +488,7 @@
                 <a href="https://www.tiktok.com/@anizahelwa?_r=1&_t=ZS-97ImrqsLzF7" target="_blank" class="w-16 h-16 rounded-full bg-[#F6F3E4] flex justify-center items-center text-wine hover:scale-110 transition duration-300 shadow-xl">
                     <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.05 1.7 4.14 1.05.99 2.49 1.52 3.86 1.6v3.82c-1.49-.05-2.98-.55-4.14-1.47-.13-.1-.23-.2-.34-.31v6.71c.02 4.19-2.65 7.97-6.71 8.94-4.52 1.15-9.3-1.46-10.4-5.96-1.19-4.51 1.34-9.36 5.8-10.61 1.14-.32 2.33-.42 3.51-.3v3.83c-1.92-.4-3.95.42-4.94 2.11-.98 1.63-.78 3.81.49 5.2 1.25 1.41 3.42 1.83 5.12 1.01 1.62-.75 2.58-2.48 2.51-4.27v-14.8zm0 0"/></svg>
                 </a>
-                <a href="https://github.com" target="_blank" class="w-16 h-16 rounded-full bg-[#F6F3E4] flex justify-center items-center text-wine hover:scale-110 transition duration-300 shadow-xl">
+                <a href="https://github.com/AnizaHelwa" target="_blank" class="w-16 h-16 rounded-full bg-[#F6F3E4] flex justify-center items-center text-wine hover:scale-110 transition duration-300 shadow-xl">
                     <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 </a>
             </div>
