@@ -11,6 +11,7 @@ $dirs = [
     '/tmp/storage/framework/sessions',
     '/tmp/storage/logs',
 ];
+
 foreach ($dirs as $dir) {
     if (!is_dir($dir)) {
         mkdir($dir, 0755, true);
@@ -27,4 +28,20 @@ $_ENV['CACHE_STORE'] = 'array';
 $_ENV['SESSION_DRIVER'] = 'cookie';
 $_ENV['LOG_CHANNEL'] = 'stderr';
 
-require __DIR__ . '/../public/index.php';
+try {
+    require __DIR__ . '/../public/index.php';
+} catch (Throwable $e) {
+    error_log('=== LARAVEL ERROR ===');
+    error_log('Message: ' . $e->getMessage());
+    error_log('File: ' . $e->getFile());
+    error_log('Line: ' . $e->getLine());
+    error_log('Trace: ' . $e->getTraceAsString());
+
+    http_response_code(500);
+
+    echo '<pre>';
+    echo 'Laravel Error: ' . htmlspecialchars($e->getMessage()) . "\n\n";
+    echo 'File: ' . htmlspecialchars($e->getFile()) . "\n";
+    echo 'Line: ' . $e->getLine() . "\n";
+    echo '</pre>';
+}
