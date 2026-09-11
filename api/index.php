@@ -3,10 +3,30 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ini_set('log_errors', 1);
+ini_set('memory_limit', '256M');
 
 error_log('=== api/index.php STARTED ===');
 
-// Pastikan vendor ter-deploy
+register_shutdown_function(function () {
+    $error = error_get_last();
+    if ($error !== null && in_array($error['type'], [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR])) {
+        error_log('=== FATAL SHUTDOWN ERROR ===');
+        error_log('Type: ' . $error['type']);
+        error_log('Message: ' . $error['message']);
+        error_log('File: ' . $error['file']);
+        error_log('Line: ' . $error['line']);
+
+        if (!headers_sent()) {
+            http_response_code(500);
+            header('Content-Type: text/plain');
+        }
+        echo "FATAL ERROR CAUGHT BY SHUTDOWN HANDLER\n\n";
+        echo 'Message: ' . $error['message'] . "\n";
+        echo 'File: ' . $error['file'] . "\n";
+        echo 'Line: ' . $error['line'] . "\n";
+    }
+});
+
 $autoload = __DIR__ . '/../vendor/autoload.php';
 if (!file_exists($autoload)) {
     http_response_code(500);
@@ -16,7 +36,6 @@ if (!file_exists($autoload)) {
     exit;
 }
 
-// Siapkan folder writable di /tmp (Vercel filesystem read-only kecuali /tmp)
 $dirs = [
     '/tmp/storage/framework/views',
     '/tmp/storage/framework/cache',
@@ -27,16 +46,12 @@ $dirs = [
     '/tmp/storage/app',
     '/tmp/storage/app/public',
 ];
-
 foreach ($dirs as $dir) {
     if (!is_dir($dir)) {
-        if (!mkdir($dir, 0777, true) && !is_dir($dir)) {
-            error_log("Failed to create dir: $dir");
-        }
+        mkdir($dir, 0777, true);
     }
 }
 
-// Arahkan semua cache/compile Laravel ke /tmp
 $_ENV['APP_CONFIG_CACHE']    = '/tmp/config.php';
 $_ENV['APP_EVENTS_CACHE']    = '/tmp/events.php';
 $_ENV['APP_PACKAGES_CACHE']  = '/tmp/packages.php';
@@ -57,37 +72,24 @@ putenv('CACHE_STORE=array');
 putenv('SESSION_DRIVER=cookie');
 putenv('LOG_CHANNEL=stderr');
 
-// Bersihkan cache lama hasil build lokal yang mungkin ikut ter-deploy
-// (bootstrap/cache/*.php dengan path absolut lokal bisa bikin crash)
-$staleCache = [
-    __DIR__ . '/../bootstrap/cache/config.php',
-    __DIR__ . '/../bootstrap/cache/routes-v7.php',
-    __DIR__ . '/../bootstrap/cache/services.php',
-    __DIR__ . '/../bootstrap/cache/packages.php',
-    __DIR__ . '/../bootstrap/cache/events.php',
-];
-foreach ($staleCache as $file) {
-    if (file_exists($file) && !is_writable(dirname($file))) {
-        error_log("WARNING: stale cache exists and dir not writable: $file");
-    }
-}
-
 try {
+    error_log('=== ABOUT TO REQUIRE public/index.php ===');
     require __DIR__ . '/../public/index.php';
+    error_log('=== FINISHED public/index.php ===');
 } catch (Throwable $e) {
-    error_log('=== LARAVEL ERROR ===');
+    error_log('=== LARAVEL ERROR (CAUGHT) ===');
     error_log('Message: ' . $e->getMessage());
     error_log('File: ' . $e->getFile());
     error_log('Line: ' . $e->getLine());
     error_log('Trace: ' . $e->getTraceAsString());
 
-    http_response_code(500);
-
+    if (!headers_sent()) {
+        http_response_code(500);
+    }
     echo '<pre>';
     echo 'Laravel Error: ' . htmlspecialchars($e->getMessage()) . "\n\n";
     echo 'File: ' . htmlspecialchars($e->getFile()) . "\n";
     echo 'Line: ' . $e->getLine() . "\n\n";
-    echo 'Trace:' . "\n";
     echo htmlspecialchars($e->getTraceAsString());
     echo '</pre>';
 }
