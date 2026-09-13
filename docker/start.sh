@@ -1,19 +1,23 @@
 #!/bin/bash
 
-# Generate app key if not set (fallback only, should be set via env var)
+set -e
+
+# Use Railway's PORT
+PORT=${PORT:-10000}
+
+# Update Nginx to listen on Railway's assigned port
+sed -i "s/listen 10000;/listen ${PORT};/" /etc/nginx/sites-available/default
+
+# Laravel cache
 php artisan config:clear
 php artisan cache:clear
 
-# Run migrations automatically on deploy
-php artisan migrate --force
-
-# Cache config, routes, views for performance
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache
 
-# Start PHP-FPM in background
+# Start PHP-FPM
 php-fpm -D
 
-# Start nginx in foreground
+# Start Nginx
 nginx -g "daemon off;"
