@@ -63,7 +63,7 @@ RUN composer install \
     --no-interaction
 
 # Copy frontend build from Node stage
-COPY --from=frontend /app/public/build /var/www/public/build
+COPY --from=frontend /app/dist /var/www/public/build
 
 # Copy Nginx configuration
 COPY docker/nginx.conf /etc/nginx/sites-available/default
