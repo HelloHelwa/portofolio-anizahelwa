@@ -14,13 +14,15 @@ mkdir -p storage/framework/cache
 mkdir -p storage/framework/sessions
 mkdir -p bootstrap/cache
 
-# Laravel cache
+# Make sure Laravel can write to runtime directories
+chown -R www-data:www-data storage bootstrap/cache
+chmod -R 775 storage bootstrap/cache
+
+# Clear and rebuild Laravel config/route cache
 php artisan config:clear
 php artisan cache:clear
-
 php artisan config:cache
 php artisan route:cache
-php artisan view:cache
 
 # Start PHP-FPM
 php-fpm -D
