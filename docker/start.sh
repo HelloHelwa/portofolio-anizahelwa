@@ -8,6 +8,12 @@ PORT=${PORT:-10000}
 # Update Nginx to listen on Railway's assigned port
 sed -i "s/listen 10000;/listen ${PORT};/" /etc/nginx/sites-available/default
 
+# Make sure Laravel runtime directories exist
+mkdir -p storage/framework/views
+mkdir -p storage/framework/cache
+mkdir -p storage/framework/sessions
+mkdir -p bootstrap/cache
+
 # Laravel cache
 php artisan config:clear
 php artisan cache:clear
